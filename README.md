@@ -10,7 +10,7 @@ This repo contains a shiny app that you can run locally to help with curating an
 See our [curated organism list to-date](https://github.com/wikipathways/pfocr-curation/blob/main/curated_organism_list_todate.csv) for a sampling of the diverse species represented in the first set of 2,400 manually curated figures. There is lot of content here!
 
 ## New Curator Training
-If this is your first time, go ahead and clone the repo and give the tool a try. By default, the tool is in t[raining mode](https://github.com/wikipathways/pfocr-curation/blob/main/app.R#L11).
+If this is your first time, go ahead and clone the repo and give the tool a try. By default, the tool is in [training mode](https://github.com/wikipathways/pfocr-curation/blob/main/app.R#L11).
 
 #### Installation
  * Install R
