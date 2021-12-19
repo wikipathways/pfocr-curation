@@ -23,8 +23,20 @@ The tool will read in an RDS of figure metadata to be curated (e.g., pfocr_figur
 
 ![Screenshot](screenshot.png?raw=true "Screenshot")
 
-**Buttons**
- * ...
+**Curation buttons**
+ * Remove Preamble -- "preamble" refers to commonly used phrases at the begining of figure titles that actually aren't at all descriptive and are just conventional English language kruft. The tool learns about these preambles as curation occurs (checking diffs along the way) and if a previously deleted reamble is found, the button will be active and a single click will remove it from the Figure title field. Simply "Reload" if you don't like the change.
+ * Remove Word -- simply removes one word at a time from the front of the Figure title. Faster than using mouse and keyboard to highlight and delete.
+ * Un-Greek -- Greek characters should not be retained in Figure titles as they can muck up later downstream bioinformatic analyses. This button will scan the Figure title text and replace Greek characters with substitutions, e.g., "alpha"
+ * Capilatlize -- will capitalize the first character in the current Figure title. Useful after making other edits and then wanting to save. All titles should start with a capital letter.
+ * Relace: Paper Title -- sometimes the Figure title is missing or woefully inadequate. This button will replace it with the Paper title, which sometimes is a perfect Figure title as well (but not always).
+ * Replace: ... pathway -- sometimes the pathway title is buried in a bunch of text. This button will look for the pattern of "blahblah pathway" or "blahblah signaling pathway" and simply replace the Figure title field with just this bit.
+
+**Decision buttons**
+ * Save -- save the current fields to the local RDS and mark as curated.
+ * Reload -- replace all fields with their original values. Kind of like a big undo.
+ * Reject -- mark the figure as "not a pathway figure" and skip it. This will result in its removal from the PFOCR collection. Obviously we try to only capture pathway figures in the pipeline, but some others still sneak through. This is one way to mark those.
+ * Non-human -- if you're sure the biology represented in the figure is not human, but you're not sure what it is (or can't be bothered at the moment), then use this button and it simply replaced the Organism text with "XXX" to be flagged for exclusion from the human collection and further curation later.
+ * Undo -- whoops! You clicked save (or reject) too soon and are having second thoughts. Click this to go back to the previous figure. You will need to start over with the curation of that figure, but it's better than regretting your work.
 
 ## Coordinating Curation
 Since the app runs locally, each curator will need to manage which sets of figures they are fixing in coordination with other curators. Otherwise, we will all be fixing the same ones over and over again! Please post an Issue in this repo and tag it as a question if you want to join. Curators can specify [assigned ranges](https://github.com/wikipathways/pfocr-curation/blob/main/app.R#L28) in the app to split up the work.
